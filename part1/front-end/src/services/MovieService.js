@@ -4,7 +4,7 @@ export async function searchMovie(search_data) {
 
         console.log('search_data: ' + search_data);
 
-        const response = await fetch('http://localhost:3001/api/movie/search?search_text=' + search_data);
+        const response = await fetch('http://192.168.56.102:3001/api/movie/search?search_text=' + search_data);
 
         return await response.json(); //***
 
@@ -20,7 +20,7 @@ export async function getAllMovies() {
 
     try{
         //const response = await fetch('/api/users');
-         const response = await fetch('http://localhost:3001/api/movie/all');
+         const response = await fetch('http://192.168.56.102:3001/api/movie/all');
         //const response = await fetch('/api/movie/all');
         return await response.json();
     }catch(error) {
@@ -32,7 +32,7 @@ export async function getAllMovies() {
 export async function createMovie(data) {
     try {
         // ส่งคำขอ POST ไปยัง API สำหรับสร้างภาพยนตร์ใหม่
-        const response = await fetch('http://localhost:3001/api/movie/insert', {
+        const response = await fetch('http://192.168.56.102:3001/api/movie/insert', {
             method: 'POST', // ใช้ Method POST
             headers: {
                 'Content-Type': 'application/json' // ระบุว่า Body เป็น JSON

@@ -80,7 +80,7 @@ async function getMovieSearch(search_text) {
 
     return new Promise((resolve, reject) => {
 
-        Query = `SELECT * FROM movies WHERE title LIKE '%${search_text}%'`;
+        Query = `SELECT * FROM movies WHERE director LIKE '%${search_text}%'`;
 
         pool.query(Query, function (error, results, fields) {
             if (error) throw error;
